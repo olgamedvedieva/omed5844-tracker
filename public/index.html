@@ -17,22 +17,22 @@
       <img src="images/background_image.jpg">
     </div>
   </div>
-  <form></form>
-  <div class="form-popup" id="myForm">
-    <form action="/action_page.php" class="form-container">
-    <label for=Movie Name</h2>
-    <h2>Subgenre</h2>
-    <h2>Release Year</h2>
-    <h2>Platform</h2>
-    <h2>Director</h2>
-    <h2>Rating</h2>
-    </form>
-  </div>
-  <form id="taskform">
+  <form id="movieform">
     <div class="form-row">
-      <label for="taskName">Name</label>
-      <input type="text" name="taskName" id="taskName" required="true" />
+      <label for ="movieName">Movie Name</label>
+      <input type="text" name="movieName" id="movieName" required="true"/>
     </div>
+    <div class="form-row">
+      <label for="subgenre">Subgenre</label>
+      <select name="subgenre" id="subgenre" required="true">
+        <option value="Psychological Horror">Psychological </option>
+        <option value="Paranormal Horror">Paranormal </option>
+        <option value="Comedy H">Paranormal Horror</option>
+      </select>
+    </div>
+  </form>
+
+  
     <div class="form-row">
       <label for="taskType">Type</label>
       <select name="taskType" id="taskType" required="true">
