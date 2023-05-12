@@ -9,7 +9,25 @@
 </head>
 
 <body>
-  <header><h1>Task Tracker</h1></header>
+  <div>
+    <header><h1>Horror Pal</h1></header>
+    <p>Track your viewing habits</p>
+    <button class="open-button" onclick="openForm()">Add new movie</button>
+    <div class="layout-grid">
+      <img src="images/background_image.jpg">
+    </div>
+  </div>
+  <form></form>
+  <div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+    <label for=Movie Name</h2>
+    <h2>Subgenre</h2>
+    <h2>Release Year</h2>
+    <h2>Platform</h2>
+    <h2>Director</h2>
+    <h2>Rating</h2>
+    </form>
+  </div>
   <form id="taskform">
     <div class="form-row">
       <label for="taskName">Name</label>
