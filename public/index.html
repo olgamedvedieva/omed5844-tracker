@@ -12,9 +12,9 @@
   <header><h1>Horror Pal</h1></header>
   <p>Track your viewing habits</p>
   <img src="images/background_image.jpg">
-  <button class="open-button" onclick="openForm()">Add new movie</button>
+  <button class="add-button" id="addButton">Add new movie</button>
   <div class="form-popup" id="movieForm">
-    <form action="/action_page.php" class="form-container">
+    <form class="form-container">
       <label for ="movieName">Movie Name</label>
       <input type="text" name="movieName" id="movieName" required="true"/>
       <div class="form-row">
@@ -66,7 +66,7 @@
       </div>
     </form>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js">
   </script>
 </body>
 

@@ -7,8 +7,13 @@ html {
   header > h1 {
     text-align: center;
   }
+
+  #movieForm {
+    display: none;
+  }
                   
   form {
+
     max-width: 500px;
     margin: 0 auto;
     border: 2px solid grey;
