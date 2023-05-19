@@ -17,7 +17,7 @@
       <img src="images/background_image.jpg">
     </div>
   </div>
-  <form id="movieform">
+  <form id="movieForm">
     <div class="form-row">
       <label for ="movieName">Movie Name</label>
       <input type="text" name="movieName" id="movieName" required="true"/>
@@ -25,37 +25,49 @@
     <div class="form-row">
       <label for="subgenre">Subgenre</label>
       <select name="subgenre" id="subgenre" required="true">
-        <option value="Psychological Horror">Psychological </option>
-        <option value="Paranormal Horror">Paranormal </option>
-        <option value="Comedy H">Paranormal Horror</option>
-      </select>
-    </div>
-  </form>
-
-  
-    <div class="form-row">
-      <label for="taskType">Type</label>
-      <select name="taskType" id="taskType" required="true">
-        <option value="">Select an option</option>
-        <option value="Concept Ideation">Concept Ideation</option>
-        <option value="Wireframing">Wireframing</option>
-        <option value="Application Coding">Application Coding</option>
+        <option value="psychological">Psychological</option>
+        <option value="paranormal">Paranormal</option>
+        <option value="comedy">Comedy</option>
+        <option value="sci-fi">Sci-Fi</option>
+        <option value="found footage">Found footage</option>
+        <option value="gore">Gore</option>
+        <option value="slasher">Slasher</option>
+        <option value="body horror">Body horror</option>
+        <option value="other">Other</option>
       </select>
     </div>
     <div class="form-row">
-      <label for="taskRate">Rate</label>
-      <input type="number" name="taskRate" id="taskRate" required="true" />
+      <label for="releaseYear">Release Year</label>
+      <input type="number" name="releaseYear" id="releaseYear" required="true" />
     </div>
     <div class="form-row">
-      <label for="taskTime">Time</label>
-      <input type="number" name="taskTime" id="taskTime" required="true" />
+      <label for="subgenre">Subgenre</label>
+      <select name="subgenre" id="subgenre" required="true">
+        <option value="netflix">Netflix</option>
+        <option value="youtube">Youtube</option>
+        <option value="amazonPrimeVideo">Amazon Prime Video</option>
+        <option value="disney">Disney +</option>
+        <option value="binge">Binge</option>
+        <option value="stan">Stan</option>
+        <option value="cinema">The cinema</option>
+        <option value="other">Other</option>
+      </select>
     </div>
     <div class="form-row">
-      <label for="taskClient">Client</label>
-      <input type="text" name="taskClient" id="taskClient" required="true" />
+      <label for ="director">Director</label>
+      <input type="text" name="director" id="director" required="true"/>
     </div>
+    <div class="rating-container">
+      <input type="hidden" name="rating" id="rating" value="0">
+        <span class="star" data-rating="1">&#9734;</span>
+        <span class="star" data-rating="2">&#9734;</span>
+        <span class="star" data-rating="3">&#9734;</span>
+        <span class="star" data-rating="4">&#9734;</span>
+        <span class="star" data-rating="5">&#9734;</span>
+      </div>
     <div class="form-row">
-      <input type="submit"/>
+      <label for ="add">Add</label>
+      <input type="submit" name="add" id="add"/>
     </div>
   </form>
   <h2>Tasks</h2>
