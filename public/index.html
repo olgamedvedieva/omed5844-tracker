@@ -9,69 +9,63 @@
 </head>
 
 <body>
-  <div>
-    <header><h1>Horror Pal</h1></header>
-    <p>Track your viewing habits</p>
-    <button class="open-button" onclick="openForm()">Add new movie</button>
-    <div class="layout-grid">
-      <img src="images/background_image.jpg">
-    </div>
-  </div>
-  <form id="movieForm">
-    <div class="form-row">
+  <header><h1>Horror Pal</h1></header>
+  <p>Track your viewing habits</p>
+  <img src="images/background_image.jpg">
+  <button class="open-button" onclick="openForm()">Add new movie</button>
+  <div class="form-popup" id="movieForm">
+    <form action="/action_page.php" class="form-container">
       <label for ="movieName">Movie Name</label>
       <input type="text" name="movieName" id="movieName" required="true"/>
-    </div>
-    <div class="form-row">
-      <label for="subgenre">Subgenre</label>
-      <select name="subgenre" id="subgenre" required="true">
-        <option value="psychological">Psychological</option>
-        <option value="paranormal">Paranormal</option>
-        <option value="comedy">Comedy</option>
-        <option value="sci-fi">Sci-Fi</option>
-        <option value="found footage">Found footage</option>
-        <option value="gore">Gore</option>
-        <option value="slasher">Slasher</option>
-        <option value="body horror">Body horror</option>
-        <option value="other">Other</option>
-      </select>
-    </div>
-    <div class="form-row">
-      <label for="releaseYear">Release Year</label>
-      <input type="number" name="releaseYear" id="releaseYear" required="true" />
-    </div>
-    <div class="form-row">
-      <label for="subgenre">Subgenre</label>
-      <select name="subgenre" id="subgenre" required="true">
-        <option value="netflix">Netflix</option>
-        <option value="youtube">Youtube</option>
-        <option value="amazonPrimeVideo">Amazon Prime Video</option>
-        <option value="disney">Disney +</option>
-        <option value="binge">Binge</option>
-        <option value="stan">Stan</option>
-        <option value="cinema">The cinema</option>
-        <option value="other">Other</option>
-      </select>
-    </div>
-    <div class="form-row">
-      <label for ="director">Director</label>
-      <input type="text" name="director" id="director" required="true"/>
-    </div>
-    <div class="rating-container">
-      <input type="hidden" name="rating" id="rating" value="0">
+      <div class="form-row">
+        <label for="subgenre">Subgenre</label>
+          <select name="subgenre" id="subgenre" required="true">
+            <option value="psychological">Psychological</option>
+            <option value="paranormal">Paranormal</option>
+            <option value="comedy">Comedy</option>
+            <option value="sci-fi">Sci-Fi</option>
+            <option value="found footage">Found footage</option>
+            <option value="gore">Gore</option>
+            <option value="slasher">Slasher</option>
+            <option value="body horror">Body horror</option>
+            <option value="other">Other</option>
+          </select>
+      </div>
+      <div class="form-row">
+        <label for="releaseYear">Release Year</label>
+        <input type="number" name="releaseYear" id="releaseYear" required="true" />
+      </div>
+      <div class="form-row">
+        <label for="subgenre">Subgenre</label>
+        <select name="subgenre" id="subgenre" required="true">
+          <option value="netflix">Netflix</option>
+          <option value="youtube">Youtube</option>
+          <option value="amazonPrimeVideo">Amazon Prime Video</option>
+          <option value="disney">Disney +</option>
+          <option value="binge">Binge</option>
+          <option value="stan">Stan</option>
+          <option value="cinema">The cinema</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for ="director">Director</label>
+        <input type="text" name="director" id="director" required="true"/>
+      </div>
+      <div class="rating-container">
+        <input type="hidden" name="rating" id="rating" value="0">
         <span class="star" data-rating="1">&#9734;</span>
         <span class="star" data-rating="2">&#9734;</span>
         <span class="star" data-rating="3">&#9734;</span>
         <span class="star" data-rating="4">&#9734;</span>
         <span class="star" data-rating="5">&#9734;</span>
       </div>
-    <div class="form-row">
-      <label for ="add">Add</label>
-      <input type="submit" name="add" id="add"/>
-    </div>
-  </form>
-  <h2>Tasks</h2>
-  <ul id="tasklist"></ul>
+      <div class="form-row">
+        <label for ="add">Add</label>
+        <input type="submit" name="add" id="add"/>
+      </div>
+    </form>
+  </div>
   <script src="script.js"></script>
   </script>
 </body>
