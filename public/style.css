@@ -5,7 +5,7 @@
     height: 100%;
     width: 100%;
   }
-  h1,h2{
+  h1,h2, button{
     font-family: "Grenze", "Times";
   }
   p{
@@ -27,7 +27,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #fff;
+    color:white;
   }
   
   .hero-title {
@@ -42,17 +42,12 @@
   
   .hero-button {
     padding: 12px 24px;
-    background-color: #000;
-    color: #fff;
+    color: #FFFBF2;
     font-size: 18px;
     border: none;
+    color: #C51924;
+    border-radius: 25px;
   }
-  
-  .hero-button:hover {
-    background-color: #333;
-  }
-  
-
   header > h1 {
     text-align: center;
   }
