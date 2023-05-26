@@ -27,22 +27,23 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color:white;
   }
   
   .hero-title {
-    font-size: 36px;
+    font-size: 100px;
     margin-bottom: 20px;
+    color: #FFFBF2;
   }
   
   .hero-description {
-    font-size: 20px;
+    font-size: 50px;
     margin-bottom: 30px;
+    color:#FFFBF2;
   }
   
   .hero-button {
     padding: 12px 24px;
-    color: #FFFBF2;
+    background-color: #FFFBF2;
     font-size: 18px;
     border: none;
     color: #C51924;
