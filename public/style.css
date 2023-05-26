@@ -38,8 +38,12 @@ html {
 
   .poster-grid {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    max-width: 1440px;
   }
-
+  .poster-grid img{
+    max-width:300px;
+  }
   
