@@ -4,7 +4,12 @@
   html {
     height: 100%;
     width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+  }
+  h1,h2{
+    font-family: "Grenze", "Times";
+  }
+  p{
+    font-family: "Assistant", "Helvetica";
   }
   .hero {
     position: relative;
@@ -28,7 +33,6 @@
   .hero-title {
     font-size: 36px;
     margin-bottom: 20px;
-    sfont-family: 'Grenze', sans-serif;
   }
   
   .hero-description {
