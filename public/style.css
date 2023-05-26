@@ -14,16 +14,15 @@
   .hero {
     position: relative;
     height: 500px; 
-    background-image: url("images/background_image.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/background_image.jpg");
     background-size: cover;
     background-position: center;
     margin: 0px 0px 30px 0px;
-    
   }
   
   .hero-content {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -31,23 +30,25 @@
   
   .hero-title {
     font-size: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     color: #FFFBF2;
   }
   
   .hero-description {
-    font-size: 50px;
-    margin-bottom: 30px;
+    font-size: 48px;
+    margin-bottom: 50px;
     color:#FFFBF2;
   }
   
   .hero-button {
-    padding: 12px 24px;
+    padding: 15px 170px 15px 170px;
     background-color: #FFFBF2;
-    font-size: 18px;
+    font-size: 35px;
     border: none;
     color: #C51924;
-    border-radius: 25px;
+    border:3px solid;
+    border-color:#C51924;
+    border-radius: 50px;
   }
   header > h1 {
     text-align: center;
