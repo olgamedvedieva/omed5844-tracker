@@ -1,7 +1,5 @@
-const movieForm = document.getElementById("movieForm");
-const showFormButton = document.querySelector(".hero-button");
-showFormButton.addEventListener("click", openForm);
-function openForm() {
-  console.log('test')
-  movieForm.style.display = "block";
-}
+const modal = document.querySelector("[data-modal]");
+const openButton = document.querySelector(".hero-button");
+openButton.addEventListener("click", () => {
+  modal.showModal()
+})
