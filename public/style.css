@@ -5,7 +5,7 @@
     height: 100%;
     width: 100%;
   }
-  h1,h2, button{
+  h1,h2,button, label {
     font-family: "Grenze", "Times";
   }
   p{
@@ -50,6 +50,12 @@
     border-color:#C51924;
     border-radius: 50px;
   }
+  .close-modal-button{
+    position: absolute;
+    left: 93%;
+    bottom:94%;
+    border-radius:50%;
+  }
   header > h1 {
     text-align: center;
   }
@@ -61,7 +67,7 @@
     top:50%;
     transform: translate(-50%,-50%);
   }            
-   
+
   form {
     margin: 0 auto;
     padding: 2em 1em;
