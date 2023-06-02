@@ -53,11 +53,17 @@
   header > h1 {
     text-align: center;
   }
-                  
+  dialog{
+    position:absolute;
+    height: 90vh;
+    width: 35vw;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+  }            
+   
   form {
-    max-width: 500px;
     margin: 0 auto;
-    border: 2px solid grey;
     padding: 2em 1em;
   }
                   
