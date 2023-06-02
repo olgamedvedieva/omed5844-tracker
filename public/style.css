@@ -5,8 +5,11 @@
     height: 100%;
     width: 100%;
   }
-  h1,h2,button, label {
+  h1,h2,button,label,input {
     font-family: "Grenze", "Times";
+  }
+  button,label,input{
+    color: #C51924;
   }
   p{
     font-family: "Assistant", "Helvetica";
@@ -39,7 +42,6 @@
     margin-bottom: 50px;
     color:#FFFBF2;
   }
-  
   .hero-button {
     padding: 15px 170px 15px 170px;
     background-color: #FFFBF2;
@@ -54,6 +56,10 @@
     left: 93%;
     bottom:94%;
     border-radius:50%;
+    font-size: 1vw;
+    background-color:#FFFBF2;
+    border-color:#C51924;
+    border: 2px solid;
   }
   header > h1 {
     text-align: center;
@@ -61,10 +67,14 @@
   dialog{
     position:absolute;
     height: 90vh;
-    width: 35vw;
+    width: 31vw;
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
+    background-color: #FFFBF2;
+    border:3px solid;
+    border-color:#C51924;
+    border-radius: 5%;
   }            
 
   form {
