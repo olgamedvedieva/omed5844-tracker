@@ -23,8 +23,10 @@
     <button class="close-modal-button">X</button>
     <div id="movieForm">
       <form class="form-container">
-        <label for ="movieName">Movie Name</label>
-        <input type="text" name="movieName" id="movieName" required="true"/>
+        <div class="form-row">
+          <label for ="movieName">Movie Name</label>
+          <input type="text" name="movieName" id="movieName" required="true"/>
+        </div>
         <div class="form-row">
           <label for="subgenre">Subgenre</label>
             <select name="subgenre" id="subgenre" required="true">
@@ -69,8 +71,7 @@
           <span class="star" data-rating="5">&#9734;</span>
         </div>
         <div class="form-row">
-          <label for ="add">Add</label>
-          <input type="submit" name="add" id="add"/>
+          <input type="submit" name="add" id="add" value="Add"/>
         </div>
       </form>
     </div>
