@@ -7,4 +7,3 @@ openButton.addEventListener("click", () => {
 closeButton.addEventListener("click", () => {
   modal.close()
 })
-
