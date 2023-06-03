@@ -53,10 +53,11 @@
   }
   .close-modal-button{
     position: absolute;
-    left: 93%;
+    left: 90%;
+    width: 2em;
     bottom:94%;
     border-radius:50%;
-    font-size: 1vw;
+    font-size: 1em;
     background-color:#FFFBF2;
     border-color:#C51924;
     border: 2px solid;
@@ -74,30 +75,55 @@
     background-color: #FFFBF2;
     border:3px solid;
     border-color:#C51924;
-    border-radius: 5%;
+    border-radius:2%;
   }            
 
   form {
     margin: 0 auto;
     padding: 2em 1em;
+    display: flex;
+    flex-direction:column;
   }
-                  
+  .rating {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  
+  .rating input {
+    position:absolute;
+    left:-9999px;
+  }
+  
+  .rating label {
+    display: inline-block;
+    font-size: 24px;
+    color: gray;
+    cursor: pointer;
+  }
+  
+  .rating label:before {
+    content: '\2606';
+  }
+  .rating:not(:hover) input:indeterminate + label,
+  .rating:not(:hover) input:checked ~ input + label,
+  .rating input:hover ~ input + label{
+    color: orange;
+  }
   .form-row {
     display: flex;
-    justify-content: flex-end;
-    padding: .5em;
+    flex-direction:column;
+    padding: .6em;
   }
-                  
-  .form-row > label {
-    width: 100px;
-  }
-                  
+                         
   .form-row > input,
   .form-row > select {
-    padding: .5em;
-    flex-grow: 1;
+    padding: .4em;
   }
-
+  .form-row > label {
+    width: auto;
+    margin-bottom: .8em;
+  }
+  
   .poster-grid {
     display: flex;
     justify-content: space-between;
