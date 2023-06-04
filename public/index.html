@@ -64,7 +64,7 @@
           <input type="text" name="director" id="director" required="true"/>
         </div>
         <label for ="rating-container"name="rating-container"id="rating-container-label">Rating</label>
-        <div class="rating-container">
+        <div class="rating-container" id="rating-container">
           <input id="rating1" type="radio" name="rating" value="1">
           <label for="rating1"></label>
         
@@ -81,11 +81,13 @@
           <label for="rating5"></label>
         </div>
         <div class="form-row">
-        <input type="submit" name="add" id="add" value="Add"/>
+          <input type="submit" name="add" id="add" value="Add"/>
         </div>
       </form>
     </div>
   </dialog>
+  <h2>Tasks</h2>
+  <ul id="movieList"></ul>
   <button id="top">
     <img src="arrow.svg" alt="arrow" class="arrow"/>
     Top

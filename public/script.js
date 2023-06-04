@@ -16,40 +16,37 @@ const buttonTop=document.getElementById("top");
 buttonTop.addEventListener("click",() => {
   window.scrollTo(0,0)
 });
-const formSubmit = document.getElementById("add");
-const ratingContainer = document.querySelector(".rating-container");
+const form = document.getElementById("movieForm");
+const movielistElem = document.getElementById('movieList');
 
-formSubmit.addEventListener('submit', function(event) {
+
+form.addEventListener('submit', function(event) {
   event.preventDefault();
-
-    // Get the selected rating value
-  const rating = document.querySelector('input[name="rating"]:checked').value;
-
-    // Get form field values
-  const movieName = form.elements.movieName.value;
-  const subgenre = form.elements.subgenre.value;
-  const releaseYear = form.elements.releaseYear.value;
-  const platform = form.elements.platform.value;
-  const director = form.elements.director.value;
-
-    // Call the addMovie function with the form data
-  addMovie(movieName, subgenre, releaseYear, platform, director, rating);
-
-    // Reset form inputs
-  form.reset();
-
-    // Close modal if needed
+  addMovie(
+    
+    form.elements.movieName.value,
+    form.elements.subgenre.value,
+    form.elements.releaseYear.value,
+    form.elements.platform.value,
+    form.elements.director.value,
+    //document.querySelector('input[name="rating"]:checked').value
+    );
   modal.close();
   overlay.classList.remove('dialog-open');
   document.body.style.removeProperty('overflow');
   });
+  function displayMovie(movie) {
+    let item = document.createElement('li');
+    item.setAttribute('data-id', movie.id);
+    item.innerHTML = `<p><strong>${movie.name}</strong><br>${movie.subgenre}</p>`;
+    movielistElem.appendChild(item);
+    form.reset();
+  }
 
-  // Other code...
-
-  // Function to add a movie to the list
-  function addMovie(name, subgenre, releaseYear, platform, director, rating) {
+  var movieList = [];
+  function addMovie(name, subgenre, releaseYear, platform, director) {
     // Create a movie object
-    const movie = {
+    let movie = {
       name,
       subgenre,
       releaseYear,
@@ -57,18 +54,22 @@ formSubmit.addEventListener('submit', function(event) {
       date: new Date().toISOString(),
       platform,
       director,
-      rating,
     };
 
+
+  // Function to add a movie to the list
+  
+  
     // Add the movie to the movieList array
     movieList.push(movie);
-
-    // Do something with the movie data (e.g., update UI, send to server, etc.)
+    displayMovie(movie);
     console.log(movieList);
+  
+    // Do something with the movie data (e.g., update UI, send to server, etc.)
   }
+  
+  // Function to display a movie in the UI
 
-  // Array to store movies
-var movieList = [];
 
 // Call the function with test values for the input paramaters
 
