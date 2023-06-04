@@ -5,11 +5,14 @@
     height: 100%;
     width: 100%;
   }
-  h1,h2,button,label,input {
+  h1,h2,h3, button,label,input {
     font-family: "Grenze", "Times";
   }
-  button,label,input{
+  button,label,input,.rating-container-label{
     color: #C51924;
+  }
+  label{
+    font-size: 1.1em;
   }
   p{
     font-family: "Assistant", "Helvetica";
@@ -78,49 +81,52 @@
     border-radius:2%;
   }            
 
-  form {
+  form{
     margin: 0 auto;
-    padding: 2em 1em;
+    padding: 1em 1em;
     display: flex;
     flex-direction:column;
   }
-  .rating{
+  .rating-container{
     display: flex;
-    justify-content: center;
+    justify-content: left;
   }
-  
-  .rating input{
+  .rating-container input{
     position: absolute;
     left: -100vw;
   }
   
-  .rating label{
+  .rating-container label{
     width: 50.19px;
+    margin: .1em .1em .1em .1em;
+    padding:.4em;
     height: 50.19px;
     background: url('stars.svg') no-repeat top left;
     cursor: pointer;
   }
-  
-  .rating:not(:hover) input:indeterminate + label,
-  .rating:not(:hover) input:checked ~ input + label,
-  .rating input:hover ~ input + label{
+  #rating-container-label{
+    display:flex;
+    flex-direction:column;
+    padding:.4em;
+  }
+  .rating-container:not(:hover) input:indeterminate + label,
+  .rating-container:not(:hover) input:checked ~ input + label,
+  .rating-container input:hover ~ input + label{
     background-position: -70px 0;
   }
   .form-row {
     display: flex;
     flex-direction:column;
-    padding: .6em;
+    padding: .4em;
+
   }
                          
-  .form-row > input,
-  .form-row > select {
-    padding: .4em;
+  .form-row input,
+  .form-row select {
+    height:2.4em;
+    box-sizing: border-box;
+    padding: 0.5em;
   }
-  .form-row > label {
-    width: auto;
-    margin-bottom: .8em;
-  }
-  
   .poster-grid {
     display: flex;
     justify-content: space-between;
