@@ -14,7 +14,7 @@
   label{
     font-size: 1.1em;
   }
-  p{
+  p, input, select{
     font-family: "Assistant", "Helvetica";
   }
   .hero {
@@ -26,11 +26,12 @@
   }
   #add{
     background-color:#C51924;
+    font-family:"Grenze", "Times";
     color:#FFFBF2;
     margin-top:1em;
     font-size:1.2em;
     text-align:center;
-    height: 2.8em;
+    height: 2.4xem;
     border:solid;
     border-radius:1em;
     border-color: #C51924;
@@ -156,7 +157,11 @@ dialog{
   .form-row select {
     height:2.4em;
     box-sizing: border-box;
-    padding: 0.5em;
+    padding:0em 0.3em;
+    font-size:0.9em;
+    border:solid 2.2px;
+    border-color:#C51924;
+    border-radius:0.5em;
   }
   .poster-grid {
     display: grid;
