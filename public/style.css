@@ -25,7 +25,17 @@
     background-position: center;
     margin: 0px 0px 30px 0px;
   }
-  
+  #add{
+    border: 1em solid;
+    background-color:#C51924;
+    text-align:center ;
+    line-height:0.1em;
+    font-size:1.3em;
+    color:#FFFBF2;
+    padding:1.2em;
+    width:17em;
+    border-radius:40px;
+  }
   .hero-content {
     position: absolute;
     top: 40%;
@@ -69,7 +79,7 @@
     text-align: center;
   }
   dialog{
-    position:absolute;
+    position:fixed;
     height: 90vh;
     width: 31vw;
     left:50%;
@@ -79,8 +89,12 @@
     border:3px solid;
     border-color:#C51924;
     border-radius:2%;
+    overflow: hidden;
+    overscroll-behavior: none;
   }            
-
+  form label{
+    padding: bottom 0.15em;
+  }
   form{
     margin: 0 auto;
     padding: 1em 1em;
@@ -99,7 +113,7 @@
   .rating-container label{
     width: 50.19px;
     margin: .1em .1em .1em .1em;
-    padding:.4em;
+    padding:0.1em .4em;
     height: 50.19px;
     background: url('stars.svg') no-repeat top left;
     cursor: pointer;
@@ -107,7 +121,7 @@
   #rating-container-label{
     display:flex;
     flex-direction:column;
-    padding:.4em;
+    padding:0.4em;
   }
   .rating-container:not(:hover) input:indeterminate + label,
   .rating-container:not(:hover) input:checked ~ input + label,
