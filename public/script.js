@@ -12,3 +12,7 @@ closeButton.addEventListener("click", () => {
   overlay.classList.remove('dialog-open');
   document.body.style.removeProperty('overflow');
 });
+const buttonTop=document.getElementById("top");
+buttonTop.addEventListener("click",() => {
+  window.scrollTo(0,0)
+});

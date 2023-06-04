@@ -66,8 +66,9 @@
   .close-modal-button{
     position: absolute;
     left: 90%;
+    height:2em;
     width: 2em;
-    bottom:94%;
+    bottom:93%;
     border-radius:50%;
     font-size: 1em;
     background-color:#FFFBF2;
@@ -129,7 +130,7 @@ dialog{
     width: 50.19px;
     margin: .1em .1em .1em .1em;
     padding:0.1em .4em;
-    height: 50.19px;
+    height: 47.19px;
     background: url('stars.svg') no-repeat top left;
     cursor: pointer;
   }
@@ -198,6 +199,7 @@ dialog{
     background-color: #FFFBF2;
     position:fixed;
     left:92%;
+    bottom:4%;
     border:solid 4px;
     height:6em;
     width:6em;
