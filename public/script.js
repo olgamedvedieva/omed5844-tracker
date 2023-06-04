@@ -16,10 +16,10 @@ const buttonTop=document.getElementById("top");
 buttonTop.addEventListener("click",() => {
   window.scrollTo(0,0)
 });
-const form = document.getElementById("movieForm");
+const formSubmit = document.getElementById("add");
 const ratingContainer = document.querySelector(".rating-container");
 
-form.addEventListener('submit', function(event) {
+formSubmit.addEventListener('submit', function(event) {
   event.preventDefault();
 
     // Get the selected rating value
@@ -40,6 +40,8 @@ form.addEventListener('submit', function(event) {
 
     // Close modal if needed
   modal.close();
+  overlay.classList.remove('dialog-open');
+  document.body.style.removeProperty('overflow');
   });
 
   // Other code...
