@@ -22,8 +22,8 @@ const movielistElem = document.getElementById('movieList');
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
+   
   addMovie(
-    
     form.elements.movieName.value,
     form.elements.subgenre.value,
     form.elements.releaseYear.value,
@@ -63,7 +63,6 @@ form.addEventListener('submit', function(event) {
     // Add the movie to the movieList array
     movieList.push(movie);
     displayMovie(movie);
-    console.log(movieList);
   
     // Do something with the movie data (e.g., update UI, send to server, etc.)
   }
