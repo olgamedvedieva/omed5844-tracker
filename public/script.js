@@ -98,6 +98,7 @@ form.addEventListener('submit', function(event) {
               
               const modalImg=document.createElement("img");
               modalImg.src=posterUrl;
+              modalImg.classList.add("modal-img");
               posterModal.appendChild(modalImg);
               let heading = document.createElement("h1");
               heading.innerHTML = movie.name.toUpperCase();
@@ -152,6 +153,10 @@ form.addEventListener('submit', function(event) {
                 posterModal.close()
                 overlay.classList.remove('dialog-open');
                 document.body.style.removeProperty('overflow');
+
+              let delButton = document.createElement('button');
+              delButton.innerHTML = "Delete";
+              posterModal.appendChild(delButton);
               });
           
             });

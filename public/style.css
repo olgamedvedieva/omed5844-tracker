@@ -217,3 +217,7 @@ dialog{
   .arrow{
   height:3em;
   }
+  .modal-img{
+    width: 200px;
+
+  }
