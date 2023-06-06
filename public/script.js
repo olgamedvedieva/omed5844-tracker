@@ -2,6 +2,7 @@ const modal = document.querySelector("[data-modal]");
 const openButton = document.querySelector(".hero-button");
 const closeButton = document.getElementById("close-main-modal");
 const overlay = document.querySelector('.dialog-overlay');
+const placeholder = document.querySelector('.placeholder-text');
 let savedMovies = JSON.parse(localStorage.getItem('savedMovies'));
 openButton.addEventListener("click", () => {
   modal.showModal()
@@ -66,13 +67,13 @@ form.addEventListener('submit', function(event) {
         
     console.log(JSON.parse(localStorage.getItem('savedMovies')))
     updateSaved();
-    }
+    placeholder.remove();
+}
   updateSaved();
 
   function updateSaved() {
     let movies= JSON.parse(localStorage.getItem('savedMovies'));
     const posterGrid = document.querySelector('.poster-grid');
-    posterGrid.innerHTML = '';
     if (movies !== null) {
       
       movies.forEach((movie) => {
@@ -192,6 +193,7 @@ form.addEventListener('submit', function(event) {
                     posterModal.close()
                     overlay.classList.remove('dialog-open');
                     document.body.style.removeProperty('overflow');
+                    posterGrid.appendChild(placeholder);
                     const index = movieList.indexOf(movie);
                     movieList.splice(index,1);
                     savedMovies.splice(index, 1);
