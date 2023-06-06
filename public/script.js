@@ -34,14 +34,8 @@ form.addEventListener('submit', function(event) {
   modal.close();
   overlay.classList.remove('dialog-open');
   document.body.style.removeProperty('overflow');
+  form.reset()
   });
-  function displayMovie(movie) {
-    let item = document.createElement('li');
-    item.setAttribute('data-id', movie.id);
-    item.innerHTML = `<p><strong>${movie.name}</strong><br>${movie.subgenre}<br>${movie.rating}</p>`;
-    movielistElem.appendChild(item);
-    form.reset();
-  }
 
   var movieList = [];
   function addMovie(name, subgenre, releaseYear, platform, director, rating) {
@@ -57,7 +51,6 @@ form.addEventListener('submit', function(event) {
       rating
     };
     movieList.push(movie);
-    displayMovie(movie);
     const encodedInput = encodeURIComponent(movie.name);
 
 // Construct the API request URL with the encoded user input
