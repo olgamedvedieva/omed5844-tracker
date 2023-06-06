@@ -212,6 +212,7 @@ dialog{
   #top{
     background-color: #FFFBF2;
     position:fixed;
+    z-index: 1;
     left:92%;
     bottom:4%;
     border:solid 4px;
