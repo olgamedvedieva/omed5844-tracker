@@ -1,7 +1,9 @@
 const modal = document.querySelector("[data-modal]");
 const openButton = document.querySelector(".hero-button");
-const closeButton = document.querySelector(".close-modal-button");
+const closeButton = document.getElementById("close-main-modal");
+const closeButtonPoster=document.getElementById("close-poster-modal");
 const overlay = document.querySelector('.dialog-overlay');
+const posterModal = document.querySelector("[poster-modal]");
 openButton.addEventListener("click", () => {
   modal.showModal()
   overlay.classList.add('dialog-open')
@@ -94,6 +96,16 @@ form.addEventListener('submit', function(event) {
 
             const posterGrid = document.querySelector('.poster-grid');
             posterGrid.appendChild(imgElement);
+            imgElement.addEventListener('click', () => {
+              posterModal.showModal()
+              overlay.classList.add('dialog-open')
+              document.body.style.overflow = 'hidden';
+            });
+            closeButtonPoster.addEventListener("click", () => {
+              posterModal.close()
+              overlay.classList.remove('dialog-open');
+              document.body.style.removeProperty('overflow');
+            });
 
           });
       })
