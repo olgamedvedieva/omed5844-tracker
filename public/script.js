@@ -51,7 +51,7 @@ form.addEventListener('submit', function(event) {
       subgenre,
       releaseYear,
       id: Date.now(),
-      date: new Date().toISOString(),
+      date: new Date().toLocaleDateString(),
       platform,
       director,
       rating
