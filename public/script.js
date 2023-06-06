@@ -153,12 +153,12 @@ form.addEventListener('submit', function(event) {
                 posterModal.close()
                 overlay.classList.remove('dialog-open');
                 document.body.style.removeProperty('overflow');
-
-              let delButton = document.createElement('button');
-              delButton.innerHTML = "Delete";
-              posterModal.appendChild(delButton);
               });
-          
+              let deleteButton = document.createElement("button");
+              deleteButton.innerHTML = "Delete";
+              deleteButton.classList.add("delete-movie-button");
+              posterModal.appendChild(deleteButton);
+              
             });
          
           });
