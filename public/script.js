@@ -17,7 +17,7 @@ buttonTop.addEventListener("click",() => {
   window.scrollTo(0,0)
 });
 const form = document.getElementById("movieForm");
-const movielistElem = document.getElementById('movieList');
+
 
 
 form.addEventListener('submit', function(event) {
@@ -52,6 +52,7 @@ form.addEventListener('submit', function(event) {
     };
     console.log(movie);
     movieList.push(movie);
+    console.log(movie)
     const encodedInput = encodeURIComponent(movie.name);
 
 // Construct the API request URL with the encoded user input
@@ -158,7 +159,21 @@ form.addEventListener('submit', function(event) {
               deleteButton.innerHTML = "Delete";
               deleteButton.classList.add("delete-movie-button");
               posterModal.appendChild(deleteButton);
-              
+              deleteButton.addEventListener('click', function(event){
+                imgElement.remove();
+
+                // Find the index of the movie in the movieList array
+                const index = movieList.findIndex(movieObj => movieObj.id === movie.id);
+        
+                // If the movie is found in the array
+                if (index !== -1) {
+                  // Remove the movie from the movieList array
+                  movieList.splice(index, 1);
+                }
+        
+                posterModal.close();
+                overlay.classList.remove('dialog-open');
+                document.body.style.removeProperty('overflow');
             });
          
           });
@@ -166,5 +181,5 @@ form.addEventListener('submit', function(event) {
       .catch(error => {
         console.error('Error:', error);
       });
+  })
   }
-  
