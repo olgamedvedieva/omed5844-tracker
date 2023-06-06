@@ -101,6 +101,7 @@ form.addEventListener('submit', function(event) {
               modalImg.src=posterUrl;
               modalImg.classList.add("modal-img");
               posterModal.appendChild(modalImg);
+              
               let heading = document.createElement("h1");
               heading.innerHTML = movie.name.toUpperCase();
               posterModal.appendChild(heading);
@@ -117,10 +118,15 @@ form.addEventListener('submit', function(event) {
               platform.innerHTML = movie.platform;
               posterModal.appendChild(platform);
             
+              let directorFormatted = movie.director.split(" ");
+              for (let i = 0; i < directorFormatted.length; i++) {
+                directorFormatted[i] = directorFormatted[i][0].toUpperCase() + directorFormatted[i].substr(1);
+              }
+              directorFormatted = directorFormatted.join(" ");
               let director = document.createElement("p");
-              director.innerHTML = movie.director;
+              director.innerHTML = directorFormatted;
               posterModal.appendChild(director);
-            
+              
               let date = document.createElement("p");
               date.innerHTML = movie.date;
               posterModal.appendChild(date);
