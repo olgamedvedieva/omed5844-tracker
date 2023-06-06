@@ -120,9 +120,25 @@ form.addEventListener('submit', function(event) {
               date.innerHTML = movie.date;
               posterModal.appendChild(date);
             
-              let rating = document.createElement("p");
+              let ratingModal = document.createElement("div");
+              let rating = movie.rating;
               rating.innerHTML = movie.rating;
-              posterModal.appendChild(rating);
+              // Generate star elements based on the rating
+              for (let i = 0; i < rating; i++) {
+                let starElement = document.createElement("span");
+                starElement.innerHTML = "&#9733;"; // Filled star symbol
+                ratingModal.appendChild(starElement);
+              }
+  
+              // Generate unfilled star elements for the remaining rating
+              for (let i = rating; i < 5; i++) {
+                let starElement = document.createElement("span");
+                starElement.innerHTML = "&#9734;"; // Unfilled star symbol
+                ratingModal.appendChild(starElement);
+              }
+              posterModal.appendChild(ratingModal);
+            
+     
             
               // Add close button
               let closeButtonPoster = document.createElement("button");
