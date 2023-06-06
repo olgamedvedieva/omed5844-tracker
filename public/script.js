@@ -84,12 +84,10 @@ form.addEventListener('submit', function(event) {
           .then(details => {
             // Extract the poster path from the movie details
             const posterPath = details.poster_path;
-            const director = details.director;
 
             // Construct the poster URL using the retrieved poster path
             const posterUrl = `https://image.tmdb.org/t/p/original/${posterPath}`;
-            movie.director = director;
-
+    
             // Display the movie poster in your web application
             const imgElement = document.createElement('img');
             imgElement.src = posterUrl;
