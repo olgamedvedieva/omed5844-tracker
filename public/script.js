@@ -3,7 +3,7 @@ const openButton = document.querySelector(".hero-button");
 const closeButton = document.getElementById("close-main-modal");
 const closeButtonPoster=document.getElementById("close-poster-modal");
 const overlay = document.querySelector('.dialog-overlay');
-const posterModal = document.querySelector("[poster-modal]");
+const posterModal = document.querySelector("[data-modal='poster-modal']");
 openButton.addEventListener("click", () => {
   modal.showModal()
   overlay.classList.add('dialog-open')
@@ -96,6 +96,9 @@ form.addEventListener('submit', function(event) {
 
             const posterGrid = document.querySelector('.poster-grid');
             posterGrid.appendChild(imgElement);
+            let heading=document.createElement("h1")
+            heading.innerHTML=movie.name;
+            posterModal.appendChild(heading);
             imgElement.addEventListener('click', () => {
               posterModal.showModal()
               overlay.classList.add('dialog-open')
