@@ -1,9 +1,7 @@
 const modal = document.querySelector("[data-modal]");
 const openButton = document.querySelector(".hero-button");
 const closeButton = document.getElementById("close-main-modal");
-const closeButtonPoster=document.getElementById("close-poster-modal");
 const overlay = document.querySelector('.dialog-overlay');
-const posterModal = document.querySelector("[data-modal='poster-modal']");
 openButton.addEventListener("click", () => {
   modal.showModal()
   overlay.classList.add('dialog-open')
@@ -93,26 +91,62 @@ form.addEventListener('submit', function(event) {
             // Display the movie poster in your web application
             const imgElement = document.createElement('img');
             imgElement.src = posterUrl;
-
             const posterGrid = document.querySelector('.poster-grid');
             posterGrid.appendChild(imgElement);
-            let heading=document.createElement("h1")
-            heading.innerHTML=movie.name;
-            posterModal.appendChild(heading);
             imgElement.addEventListener('click', () => {
+              const posterModal = document.createElement("dialog");
+              posterModal.classList.add("poster-modal");
+              posterModal.setAttribute("data-modal", "poster-modal");
+              document.body.appendChild(posterModal);
               posterModal.showModal()
               overlay.classList.add('dialog-open')
               document.body.style.overflow = 'hidden';
+              
+              let heading = document.createElement("h1");
+              heading.innerHTML = movie.name.toUpperCase();
+              posterModal.appendChild(heading);
+          
+              let subgenre = document.createElement("p");
+              subgenre.innerHTML = movie.subgenre;
+              posterModal.appendChild(subgenre);
+            
+              let releaseYear = document.createElement("p");
+              releaseYear.innerHTML = movie.releaseYear;
+              posterModal.appendChild(releaseYear);
+            
+              let platform = document.createElement("p");
+              platform.innerHTML = movie.platform;
+              posterModal.appendChild(platform);
+            
+              let director = document.createElement("p");
+              director.innerHTML = movie.director.toUpperCase();
+              posterModal.appendChild(director);
+            
+              let date = document.createElement("p");
+              date.innerHTML = movie.date;
+              posterModal.appendChild(date);
+            
+              let rating = document.createElement("p");
+              rating.innerHTML = movie.rating;
+              posterModal.appendChild(rating);
+            
+              // Add close button
+              let closeButtonPoster = document.createElement("button");
+              closeButtonPoster.innerHTML = "X";
+              closeButtonPoster.classList.add("close-poster-modal");
+              posterModal.appendChild(closeButtonPoster);
+              closeButtonPoster.addEventListener("click", () => {
+                posterModal.close()
+                overlay.classList.remove('dialog-open');
+                document.body.style.removeProperty('overflow');
+              });
+          
             });
-            closeButtonPoster.addEventListener("click", () => {
-              posterModal.close()
-              overlay.classList.remove('dialog-open');
-              document.body.style.removeProperty('overflow');
-            });
-
+         
           });
       })
       .catch(error => {
         console.error('Error:', error);
       });
   }
+  
