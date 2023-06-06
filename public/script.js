@@ -96,6 +96,9 @@ form.addEventListener('submit', function(event) {
               overlay.classList.add('dialog-open')
               document.body.style.overflow = 'hidden';
               
+              const modalImg=document.createElement("img");
+              modalImg.src=posterUrl;
+              posterModal.appendChild(modalImg);
               let heading = document.createElement("h1");
               heading.innerHTML = movie.name.toUpperCase();
               posterModal.appendChild(heading);
