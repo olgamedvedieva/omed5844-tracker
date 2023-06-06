@@ -50,6 +50,7 @@ form.addEventListener('submit', function(event) {
       director,
       rating
     };
+    console.log(movie);
     movieList.push(movie);
     const encodedInput = encodeURIComponent(movie.name);
 
@@ -112,7 +113,7 @@ form.addEventListener('submit', function(event) {
               posterModal.appendChild(platform);
             
               let director = document.createElement("p");
-              director.innerHTML = movie.director.toUpperCase();
+              director.innerHTML = movie.director;
               posterModal.appendChild(director);
             
               let date = document.createElement("p");
