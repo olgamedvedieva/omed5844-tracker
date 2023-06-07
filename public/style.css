@@ -222,11 +222,6 @@ dialog{
   }
 .modal-img{
   width: 18vw;
-  position:absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -75%);
-  text-align: center;
 
   }
  .delete-movie-button{
@@ -249,4 +244,15 @@ dialog{
 .poster-modal{
   display:flex;
   flex-direction:column;
+  justify-content: center;
+}
+.poster-modal p,
+.poster-modal h1,
+.poster-modal div,
+.modal-img{
+  align-self:center;
+  
+}
+.delete-movie-button{
+  position:absolute
 }

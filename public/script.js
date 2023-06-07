@@ -127,17 +127,16 @@ form.addEventListener('submit', function(event) {
                   let heading = document.createElement("h1");
                   heading.innerHTML = movie.name.toUpperCase();
                   posterModal.appendChild(heading);
-              
                   let subgenre = document.createElement("p");
-                  subgenre.innerHTML = movie.subgenre;
+                  subgenre.innerHTML = `Subgenre: ${movie.subgenre}`;
                   posterModal.appendChild(subgenre);
                 
                   let releaseYear = document.createElement("p");
-                  releaseYear.innerHTML = movie.releaseYear;
+                  releaseYear.innerHTML = `Release Year: ${movie.releaseYear}`;
                   posterModal.appendChild(releaseYear);
                 
                   let platform = document.createElement("p");
-                  platform.innerHTML = movie.platform;
+                  platform.innerHTML = `Platform: ${movie.platform}`;
                   posterModal.appendChild(platform);
                 
                   let directorFormatted = movie.director.split(" ");
@@ -146,11 +145,11 @@ form.addEventListener('submit', function(event) {
                   }
                   directorFormatted = directorFormatted.join(" ");
                   let director = document.createElement("p");
-                  director.innerHTML = directorFormatted;
+                  director.innerHTML =`Director: ${directorFormatted}`;
                   posterModal.appendChild(director);
                   
                   let date = document.createElement("p");
-                  date.innerHTML = movie.date;
+                  date.innerHTML = `Date Added: ${movie.date}`;
                   posterModal.appendChild(date);
                 
                   let ratingModal = document.createElement("div");
