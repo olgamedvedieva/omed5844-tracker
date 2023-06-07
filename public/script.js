@@ -2,7 +2,7 @@ const modal = document.querySelector("[data-modal]");
 const openButton = document.querySelector(".hero-button");
 const closeButton = document.getElementById("close-main-modal");
 const overlay = document.querySelector('.dialog-overlay');
-let savedMovies = JSON.parse(localStorage.getItem('savedMovies'));aa
+let savedMovies = JSON.parse(localStorage.getItem('savedMovies'));
 openButton.addEventListener("click", () => {
   modal.showModal()
   overlay.classList.add('dialog-open')
