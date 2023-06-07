@@ -214,7 +214,6 @@
   height:3em;
   }
   .poster-modal{
-    display:flex;
     flex-direction:column;
     justify-content: center;
   }

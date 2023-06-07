@@ -59,7 +59,7 @@ form.addEventListener('submit', function(event) {
       savedMovies = [movie]
     } else {
       if (savedMovies.find(element => element.name === movie.name)){
-        console.log('Movie already exists')
+        alert('Movie already exists')
       } else {
         savedMovies.push(movie)
       }
@@ -104,7 +104,9 @@ form.addEventListener('submit', function(event) {
                 posterGrid.appendChild(imgElement);
                 imgElement.addEventListener('click', () => {
                   document.body.appendChild(posterModal);
-                  posterModal.showModal()
+                  posterModal.innerHTML = "";
+                  posterModal.showModal();
+                  posterModal.style.display = "flex";
                   overlay.classList.add('dialog-open')
                   document.body.style.overflow = 'hidden';
                   
@@ -162,7 +164,8 @@ form.addEventListener('submit', function(event) {
                   closeButtonPoster.classList.add("close-poster-modal");
                   posterModal.appendChild(closeButtonPoster);
                   closeButtonPoster.addEventListener("click", () => {
-                    posterModal.close()
+                    posterModal.close();
+                    posterModal.style.display = "none";
                     overlay.classList.remove('dialog-open');
                     document.body.style.removeProperty('overflow');
                   });
@@ -172,7 +175,8 @@ form.addEventListener('submit', function(event) {
                   posterModal.appendChild(deleteButton);
                   deleteButton.addEventListener('click', function(event){
                     imgElement.remove();
-                    posterModal.close()
+                    posterModal.close();
+                    posterModal.style.display = "none";
                     overlay.classList.remove('dialog-open');
                     document.body.style.removeProperty('overflow');
                     const index = movieList.indexOf(movie);
