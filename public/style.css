@@ -148,7 +148,7 @@
     margin: .1em .1em .1em .1em;
     padding:0.1em .4em;
     height: 47.19px;
-    background: url('stars.svg') no-repeat top left;
+    background: url('images/stars.svg') no-repeat top left;
     cursor: pointer;
   }/*this uses the stars.svg file to import a specific part of the image based on the given pixels, as per source:https://buttered-thorium-f6a.notion.site/How-To-Create-Interactive-Star-Ratings-171c5514b58744c2b531dcb96cedd89b*/  
   .rating-container:not(:hover) input:indeterminate + label,
