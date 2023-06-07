@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <div class="hero">
+  <div class="hero-container">
     <div class="hero-content">
       <h1 class="hero-title">Horror Pal</h1>
       <p class="hero-description">Track your viewing habits</p>
@@ -21,7 +21,7 @@
   </div>  
   <div class="dialog-overlay"></div>
   <dialog data-modal>
-    <button class="close-modal-button" id="close-main-modal">X</button>
+    <button class="close-main-modal-button" id="close-main-modal">X</button>
     <form id="movieForm">
       <div class="form-container">
         <div class="form-row">
@@ -63,7 +63,7 @@
           <label for ="director">Director</label>
           <input type="text" name="director" id="director" required="true"/>
         </div>
-        <label for ="rating-container"name="rating-container"id="rating-container-label">Rating</label>
+        <label for ="rating-container"name="rating-container"id="rating-container-overall-label">Rating</label>
         <div class="rating-container" id="rating-container">
           <input id="rating1" type="radio" name="rating" value="1">
           <label for="rating1"></label>
@@ -81,7 +81,7 @@
           <label for="rating5"></label>
         </div>
         <div class="form-row">
-          <input type="submit" name="add" id="add" value="Add"/>
+          <input type="submit" name="add" id="addMovieButton" value="Add"/>
         </div>
       </div>
     </form>

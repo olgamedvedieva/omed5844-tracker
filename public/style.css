@@ -5,10 +5,10 @@
     height: 100%;
     width: 100%;
   }
-  h1,h2,h3, button,label,input, b, #add{
+  h1,h2,h3, button,label,input, b, #addMovieButton{
     font-family: "Grenze", "Times";
   }
-  button,label,input,.rating-container-label{
+  button,label,input,.rating-container-label,.poster-modal h1{
     color: #C51924;
   }
   label{
@@ -17,23 +17,12 @@
   p, input, select{
     font-family: "Assistant", "Helvetica";
   }
-  .hero {
+  .hero-container {
     position: relative;
     height: 500px; 
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/background_image.jpg");
     background-size: cover;
     background-position: center;
-  }
-  #add{
-    background-color:#C51924;
-    color:#FFFBF2;
-    margin-top:1em;
-    font-size:1.2em;
-    text-align:center;
-    height: 2.4xem;
-    border:solid;
-    border-radius:1em;
-    border-color: #C51924;
   }
   .hero-content {
     position: absolute;
@@ -63,53 +52,34 @@
     border-color:#C51924;
     border-radius: 50px;
   }
-  .close-modal-button{
-    position: absolute;
-    left: 90%;
-    height:2em;
-    width: 2em;
-    bottom:93%;
-    border-radius:50%;
-    font-size: 1em;
-    background-color:#FFFBF2;
+  dialog{
+    position:fixed;
+    height: 90vh;
+    width: 31vw;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    background-color: #FFFBF2;
+    border:3px solid;
     border-color:#C51924;
-    border: 2px solid;
+    border-radius:2%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }          
+  .dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px); 
+    z-index: 999;
+    display: none; 
   }
-  header > h1 {
-    text-align: center;
-  }
-.dialog-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px); /* Apply blur effect to the background */
-  z-index: 999;
-  display: none; 
-}
-
-.dialog-open {
-  display: block; /* Show the overlay when the dialog is open */
-}
-dialog{
-  position:fixed;
-  height: 90vh;
-  width: 31vw;
-  left:50%;
-  top:50%;
-  transform: translate(-50%,-50%);
-  background-color: #FFFBF2;
-  border:3px solid;
-  border-color:#C51924;
-  border-radius:2%;
-  overflow: hidden;
-  overscroll-behavior: none;
-  }            
-  form label{
-    padding: bottom 0.15em;
-  }
+  .dialog-open {
+    display: block; 
+    }
   form{
     margin: 0 auto;
     padding: 1em;
@@ -117,39 +87,14 @@ dialog{
     flex-direction:column;
     justify-content: flex-start;
   }
-  .rating-container{
-    display: flex;
-    justify-content: left;
-  }
-  .rating-container input{
-    position: absolute;
-    left: -100vw;
-  }
-  
-  .rating-container label{
-    width: 50.19px;
-    margin: .1em .1em .1em .1em;
-    padding:0.1em .4em;
-    height: 47.19px;
-    background: url('stars.svg') no-repeat top left;
-    cursor: pointer;
-  }
-  #rating-container-label{
-    display:flex;
-    flex-direction:column;
-    padding:0.4em;
-  }
-  .rating-container:not(:hover) input:indeterminate + label,
-  .rating-container:not(:hover) input:checked ~ input + label,
-  .rating-container input:hover ~ input + label{
-    background-position: -70px 0;
+  form label{
+    padding: bottom 0.15em;
   }
   .form-row {
     display: flex;
     flex-direction:column;
     padding: .4em;
     margin-left:0;
-
   }
                          
   .form-row input,
@@ -161,6 +106,55 @@ dialog{
     border:solid 2.2px;
     border-color:#C51924;
     border-radius:0.5em;
+  }
+  .rating-container{
+    display: flex;
+    justify-content: left;
+  }
+  .rating-container input{
+    position: absolute;
+    left: -100vw;
+  }
+  #addMovieButton{
+    background-color:#C51924;
+    color:#FFFBF2;
+    margin-top:1em;
+    font-size:1.2em;
+    text-align:center;
+    height: 2.4xem;
+    border:solid;
+    border-radius:1em;
+    border-color: #C51924;
+  }
+  .close-main-modal-button{
+    position: absolute;
+    left: 90%;
+    height:2em;
+    width: 2em;
+    bottom:93%;
+    border-radius:50%;
+    font-size: 1em;
+    background-color:#FFFBF2;
+    border-color:#C51924;
+    border: 2px solid;
+  }          
+  #rating-container-overall-label{
+    display:flex;
+    flex-direction:column;
+    padding:0.4em;
+  }
+  .rating-container label{
+    width: 50.19px;
+    margin: .1em .1em .1em .1em;
+    padding:0.1em .4em;
+    height: 47.19px;
+    background: url('stars.svg') no-repeat top left;
+    cursor: pointer;
+  }
+  .rating-container:not(:hover) input:indeterminate + label,
+  .rating-container:not(:hover) input:checked ~ input + label,
+  .rating-container input:hover ~ input + label{
+    background-position: -70px 0;
   }
   .poster-grid {
     position:relative;
@@ -219,64 +213,52 @@ dialog{
   .arrow{
   height:3em;
   }
-.modal-img{
-  width: 18vw;
-  align-self: center;
-
+  .poster-modal{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
   }
- .delete-movie-button{
-  height:50px;
-  padding: 10px 30px;
- }
- .close-poster-modal{
-  position: absolute;
-  left: 90%;
-  height:2em;
-  width: 2em;
-  bottom:93%;
-  border-radius:50%;
-  font-size: 1em;
-  background-color:#FFFBF2;
-  border-color:#C51924;
-  border: 2px solid;
- }
- 
-.poster-modal{
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-}
-.poster-modal h1{
-  color:#C51924;
-}
-.poster-modal p,
-.poster-modal h1,
-.poster-modal div{
-  align-self:center;
-  padding: 2.5px;
-}
-
-.delete-movie-button{
-  position: absolute;
-  display:flex;
-  right: 80%;
-  height:35px;
-  width: 80px;
-  border-radius: 13;
-  justify-content: center;
-  align-items: center;
-  bottom:92.5%;
-  font-size: 1em;
-  background-color:#C51924;
-  color:#FFFBF2;
-  border-color:#C51924;
-  border: 2px solid;
-}
-.filled-star {
-  color:#C51924 /* Set the color to gold */
-}
-
-/* Unfilled star */
-.unfilled-star {
-  color:#C51924; /* Set the color to gray */
-}
+  .modal-img{
+    width: 18vw;
+    align-self: center;
+  }
+  .poster-modal p,
+  .poster-modal h1,
+  .poster-modal div{
+    align-self:center;
+    padding: 2.5px;
+  }
+  .filled-star {
+    color:#C51924 
+  }
+  .unfilled-star {
+    color:#C51924; 
+  }
+  .close-poster-modal{
+    position: absolute;
+    left: 90%;
+    height:2em;
+    width: 2em;
+    bottom:93%;
+    border-radius:50%;
+    font-size: 1em;
+    background-color:#FFFBF2;
+    border-color:#C51924;
+    border: 2px solid;
+  }
+  .delete-movie-button{
+    position: absolute;
+    display:flex;
+    right: 80%;
+    height:35px;
+    width: 80px;
+    border-radius: 13;
+    justify-content: center;
+    align-items: center;
+    bottom:92.5%;
+    font-size: 1em;
+    background-color:#C51924;
+    color:#FFFBF2;
+    border-color:#C51924;
+    border: 2px solid;
+  }
