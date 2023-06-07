@@ -237,7 +237,7 @@ dialog{
  }
  .close-poster-modal{
   position: absolute;
-  left: 90%;
+  left: 95%;
   height:2em;
   width: 2em;
   bottom:93%;
@@ -246,4 +246,7 @@ dialog{
   background-color:#FFFBF2;
   border-color:#C51924;
   border: 2px solid;
+ }
+ .poster-modal{
+  width:70vw;
  }
