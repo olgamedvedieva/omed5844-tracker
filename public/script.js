@@ -43,7 +43,6 @@ form.addEventListener('submit', function(event) {
 
   var movieList = [];
   function addMovie(name, subgenre, releaseYear, platform, director, rating) {
-    // Create a movie object
     let movie = {
       name,
       subgenre,
@@ -80,35 +79,26 @@ form.addEventListener('submit', function(event) {
       
       movies.forEach((movie) => {
         const encodedInput = encodeURIComponent(movie.name);      
-// Construct the API request URL with the encoded user input
         const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=1871ce5381b5ef8a5f45a43210139f5b&query=${encodedInput}`;
 
-// Make the API request using fetch or any other HTTP library
         fetch(apiUrl)
           .then(response => response.json())
           .then(data => {
-            // Extract movie details from the API response
             const movies = data.results;
             
-            // Assuming you want to select the first movie from the search results
             const chosenMovie = movies[0];
 
-            // Retrieve the movie ID
             const movieId = chosenMovie.id;
 
-            // Make a request to fetch movie details including the poster
             const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=1871ce5381b5ef8a5f45a43210139f5b`;
 
             fetch(movieDetailsUrl)
               .then(response => response.json())
               .then(details => {
-                // Extract the poster path from the movie details
                 const posterPath = details.poster_path;
 
-                // Construct the poster URL using the retrieved poster path
                 const posterUrl = `https://image.tmdb.org/t/p/original/${posterPath}`;
         
-                // Display the movie poster in your web application
                 const imgElement = document.createElement('img');
                 imgElement.src = posterUrl;
                 posterGrid.appendChild(imgElement);
@@ -127,15 +117,15 @@ form.addEventListener('submit', function(event) {
                   heading.innerHTML = movie.name.toUpperCase();
                   posterModal.appendChild(heading);
                   let subgenre = document.createElement("p");
-                  subgenre.innerHTML = `Subgenre: ${movie.subgenre}`;
+                  subgenre.innerHTML = `<b>Subgenre</b>: ${movie.subgenre}`;
                   posterModal.appendChild(subgenre);
                 
                   let releaseYear = document.createElement("p");
-                  releaseYear.innerHTML = `Release Year: ${movie.releaseYear}`;
+                  releaseYear.innerHTML = `<b>Release Year</b>: ${movie.releaseYear}`;
                   posterModal.appendChild(releaseYear);
                 
                   let platform = document.createElement("p");
-                  platform.innerHTML = `Platform: ${movie.platform}`;
+                  platform.innerHTML = `<b>Platform</b>: ${movie.platform}`;
                   posterModal.appendChild(platform);
                 
                   let directorFormatted = movie.director.split(" ");
@@ -144,34 +134,29 @@ form.addEventListener('submit', function(event) {
                   }
                   directorFormatted = directorFormatted.join(" ");
                   let director = document.createElement("p");
-                  director.innerHTML =`Director: ${directorFormatted}`;
+                  director.innerHTML =`<b>Director</b>: ${directorFormatted}`;
                   posterModal.appendChild(director);
                   
                   let date = document.createElement("p");
-                  date.innerHTML = `Date Added: ${movie.date}`;
+                  date.innerHTML = `<b>Date Added</b>: ${movie.date}`;
                   posterModal.appendChild(date);
                 
                   let ratingModal = document.createElement("div");
                   let rating = movie.rating;
-                  rating.innerHTML = movie.rating;
-                  // Generate star elements based on the rating
                   for (let i = 0; i < rating; i++) {
                     let starElement = document.createElement("span");
-                    starElement.innerHTML = "&#9733;"; // Filled star symbol
+                    starElement.classList.add("filled-star"); 
+                    starElement.innerHTML = "&#9733;"; 
                     ratingModal.appendChild(starElement);
                   }
       
-                  // Generate unfilled star elements for the remaining rating
                   for (let i = rating; i < 5; i++) {
                     let starElement = document.createElement("span");
-                    starElement.innerHTML = "&#9734;"; // Unfilled star symbol
+                    starElement.classList.add("unfilled-star"); 
+                    starElement.innerHTML = "&#9734;"; 
                     ratingModal.appendChild(starElement);
                   }
                   posterModal.appendChild(ratingModal);
-                
-        
-                
-                  // Add close button
                   let closeButtonPoster = document.createElement("button");
                   closeButtonPoster.innerHTML = "X";
                   closeButtonPoster.classList.add("close-poster-modal");

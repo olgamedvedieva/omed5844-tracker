@@ -5,7 +5,7 @@
     height: 100%;
     width: 100%;
   }
-  h1,h2,h3, button,label,input {
+  h1,h2,h3, button,label,input, b, #add{
     font-family: "Grenze", "Times";
   }
   button,label,input,.rating-container-label{
@@ -26,7 +26,6 @@
   }
   #add{
     background-color:#C51924;
-    font-family:"Grenze", "Times";
     color:#FFFBF2;
     margin-top:1em;
     font-size:1.2em;
@@ -222,6 +221,7 @@ dialog{
   }
 .modal-img{
   width: 18vw;
+  align-self: center;
 
   }
  .delete-movie-button{
@@ -246,22 +246,37 @@ dialog{
   flex-direction:column;
   justify-content: center;
 }
+.poster-modal h1{
+  color:#C51924;
+}
 .poster-modal p,
 .poster-modal h1,
-.poster-modal div,
-.modal-img{
+.poster-modal div{
   align-self:center;
-  
+  padding: 2.5px;
 }
+
 .delete-movie-button{
   position: absolute;
+  display:flex;
   right: 80%;
-  height:2em;
-  width: 2em;
-  text-align:center;
-  bottom:80%;
+  height:35px;
+  width: 80px;
+  border-radius: 13;
+  justify-content: center;
+  align-items: center;
+  bottom:92.5%;
   font-size: 1em;
-  background-color:#FFFBF2;
+  background-color:#C51924;
+  color:#FFFBF2;
   border-color:#C51924;
   border: 2px solid;
+}
+.filled-star {
+  color:#C51924 /* Set the color to gold */
+}
+
+/* Unfilled star */
+.unfilled-star {
+  color:#C51924; /* Set the color to gray */
 }
