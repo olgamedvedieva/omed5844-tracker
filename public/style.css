@@ -231,3 +231,19 @@ dialog{
     width: 200px;
 
   }
+ .delete-movie-button{
+  height:50px;
+  padding: 10px 30px;
+ }
+ .close-poster-modal{
+  position: absolute;
+  left: 90%;
+  height:2em;
+  width: 2em;
+  bottom:93%;
+  border-radius:50%;
+  font-size: 1em;
+  background-color:#FFFBF2;
+  border-color:#C51924;
+  border: 2px solid;
+ }
