@@ -23,7 +23,7 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/background_image.jpg");
     background-size: cover;
     background-position: center;
-  }
+  }/*the gradient was used to create a background blur effect, while the background-size/-position ensured that the image covered the container fully*/
   .hero-content {
     position: absolute;
     top: 40%;
@@ -31,7 +31,7 @@
     transform: translate(-50%, -50%);
     text-align: center;
   }
-  
+  /*this places hero-content in the middle relative to its parent container*/
   .hero-title {
     font-size: 100px;
     margin-bottom: 12px;
@@ -65,7 +65,7 @@
     border-radius:2%;
     overflow: hidden;
     overscroll-behavior: none;
-  }          
+  } /*"fixed" and overflow ensures that the dialog doesn't move with the page nor does the page itself move, and overscroll beahavior ensure that one cannot scroll within the actual */        
   .dialog-overlay {
     position: fixed;
     top: 0;
@@ -76,7 +76,7 @@
     backdrop-filter: blur(8px); 
     z-index: 999;
     display: none; 
-  }
+  }/*similar mechanism as above, ensures that the rest of the body is blurred out while modal is open*/      
   .dialog-open {
     display: block; 
     }
@@ -86,7 +86,7 @@
     display: flex;
     flex-direction:column;
     justify-content: flex-start;
-  }
+  }/*making sure the form content is displaed vertically and to the left*/      
   form label{
     padding: bottom 0.15em;
   }
@@ -106,7 +106,7 @@
     border:solid 2.2px;
     border-color:#C51924;
     border-radius:0.5em;
-  }
+  }/*border-box makes sure that padding is included in height*/   
   .rating-container{
     display: flex;
     justify-content: left;
@@ -114,7 +114,7 @@
   .rating-container input{
     position: absolute;
     left: -100vw;
-  }
+  }/*this moves the radio buttons out of sight so that the stars can be visible*/   
   #addMovieButton{
     background-color:#C51924;
     color:#FFFBF2;
@@ -150,12 +150,12 @@
     height: 47.19px;
     background: url('stars.svg') no-repeat top left;
     cursor: pointer;
-  }
+  }/*this uses the stars.svg file to import a specific part of the image based on the given pixels*/  
   .rating-container:not(:hover) input:indeterminate + label,
   .rating-container:not(:hover) input:checked ~ input + label,
   .rating-container input:hover ~ input + label{
     background-position: -70px 0;
-  }
+  }/*this deals with circumstances such as the user never having selected a radio button, a radio button being checked, and the user changing their mind*/  
   .poster-grid {
     position:relative;
     display: grid;
@@ -209,7 +209,7 @@
     justify-content:center;
     align-items: center;
     flex-direction: column;
-  }
+  }/*the fixed position puts the button at a permanent spot towards the button, and the z index makes sures its always overlayed on top of everything else*/  
   .arrow{
   height:3em;
   }
