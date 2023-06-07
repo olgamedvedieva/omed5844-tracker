@@ -2,7 +2,7 @@ const modal = document.querySelector("[data-modal]");
 const openButton = document.querySelector(".hero-button");
 const closeButton = document.getElementById("close-main-modal");
 const overlay = document.querySelector('.dialog-overlay');
-let savedMovies = JSON.parse(localStorage.getItem('savedMovies'));
+let savedMovies = JSON.parse(localStorage.getItem('savedMovies'));aa
 openButton.addEventListener("click", () => {
   modal.showModal()
   overlay.classList.add('dialog-open')
@@ -108,7 +108,6 @@ form.addEventListener('submit', function(event) {
                 // Display the movie poster in your web application
                 const imgElement = document.createElement('img');
                 imgElement.src = posterUrl;
-                const posterGrid = document.querySelector('.poster-grid');
                 posterGrid.appendChild(imgElement);
                 imgElement.addEventListener('click', () => {
                   const posterModal = document.createElement("dialog");

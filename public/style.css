@@ -254,5 +254,14 @@ dialog{
   
 }
 .delete-movie-button{
-  position:absolute
+  position: absolute;
+  right: 80%;
+  height:2em;
+  width: 2em;
+  text-align:center;
+  bottom:80%;
+  font-size: 1em;
+  background-color:#FFFBF2;
+  border-color:#C51924;
+  border: 2px solid;
 }
