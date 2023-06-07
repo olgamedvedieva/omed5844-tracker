@@ -65,7 +65,7 @@
     border-radius:2%;
     overflow: hidden;
     overscroll-behavior: none;
-  } /*"fixed" and overflow ensures that the dialog doesn't move with the page nor does the page itself move, and overscroll beahavior ensure that one cannot scroll within the actual */        
+  } /*"fixed" and overflow ensures that the dialog doesn't move with the page nor does the page itself move, and overscroll beahavior ensure that one cannot scroll within the actual modal */        
   .dialog-overlay {
     position: fixed;
     top: 0;
