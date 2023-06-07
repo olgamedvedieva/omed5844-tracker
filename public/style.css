@@ -195,6 +195,18 @@
     max-height:18em;
     padding:1.5em 1em 3em 3em;
   }
+  .API-logo{
+    max-width:5vw;
+    margin-top:2em;
+    position:absolute;
+    left:83vw;
+  }
+  .API-text{
+    font-size:0.5em;
+    position:absolute;
+    margin-top:4em;
+    left:44vw;
+  }
   #top{
     background-color: #FFFBF2;
     position:fixed;
@@ -247,7 +259,6 @@
   }
   .delete-movie-button{
     position: absolute;
-    display:flex;
     right: 80%;
     height:35px;
     width: 80px;
