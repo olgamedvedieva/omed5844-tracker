@@ -2,8 +2,12 @@ const modal = document.querySelector("[data-modal]");
 const openButton = document.querySelector(".hero-button");
 const closeButton = document.getElementById("close-main-modal");
 const overlay = document.querySelector('.dialog-overlay');
-const placeholder = document.querySelector('.placeholder-text');
+const placeholder = document.querySelector(".placeholder-text");
+const placeholderText= document.querySelector(".placeholder-title");
+const posterGrid = document.querySelector('.poster-grid');
+
 let savedMovies = JSON.parse(localStorage.getItem('savedMovies'));
+
 openButton.addEventListener("click", () => {
   modal.showModal()
   overlay.classList.add('dialog-open')
@@ -24,7 +28,6 @@ const form = document.getElementById("movieForm");
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
-   
   addMovie(
     form.elements.movieName.value,
     form.elements.subgenre.value,
@@ -41,7 +44,6 @@ form.addEventListener('submit', function(event) {
 
   var movieList = [];
   function addMovie(name, subgenre, releaseYear, platform, director, rating) {
-    // Create a movie object
     let movie = {
       name,
       subgenre,
@@ -67,15 +69,15 @@ form.addEventListener('submit', function(event) {
         
     console.log(JSON.parse(localStorage.getItem('savedMovies')))
     updateSaved();
-    placeholder.remove();
 }
   updateSaved();
 
   function updateSaved() {
     let movies= JSON.parse(localStorage.getItem('savedMovies'));
-    const posterGrid = document.querySelector('.poster-grid');
-    if (movies !== null) {
-      
+    
+    if (movies !== null && movies.length > 0) {
+      placeholderText.remove()
+      placeholder.remove()
       movies.forEach((movie) => {
         const encodedInput = encodeURIComponent(movie.name);      
 // Construct the API request URL with the encoded user input
@@ -175,10 +177,12 @@ form.addEventListener('submit', function(event) {
         
                 
                   // Add close button
+                  let buttonContainer= document.createElement("div");
+                  posterModal.appendChild(buttonContainer);
                   let closeButtonPoster = document.createElement("button");
                   closeButtonPoster.innerHTML = "X";
                   closeButtonPoster.classList.add("close-poster-modal");
-                  posterModal.appendChild(closeButtonPoster);
+                  buttonContainer.appendChild(closeButtonPoster);
                   closeButtonPoster.addEventListener("click", () => {
                     posterModal.close()
                     overlay.classList.remove('dialog-open');
@@ -187,13 +191,12 @@ form.addEventListener('submit', function(event) {
                   let deleteButton = document.createElement("button");
                   deleteButton.innerHTML = "Delete";
                   deleteButton.classList.add("delete-movie-button");
-                  posterModal.appendChild(deleteButton);
+                  buttonContainer.appendChild(deleteButton);
                   deleteButton.addEventListener('click', function(event){
                     imgElement.remove();
-                    posterModal.close()
+                    posterModal.close();
                     overlay.classList.remove('dialog-open');
                     document.body.style.removeProperty('overflow');
-                    posterGrid.appendChild(placeholder);
                     const index = movieList.indexOf(movie);
                     movieList.splice(index,1);
                     savedMovies.splice(index, 1);
@@ -206,7 +209,15 @@ form.addEventListener('submit', function(event) {
         })
         })
       })
-      }
-    }
       
- 
+      }
+
+    }
+
+
+
+
+
+
+
+   
