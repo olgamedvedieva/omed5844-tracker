@@ -200,6 +200,7 @@ form.addEventListener('submit', function(event) {
                     movieList.splice(index,1);
                     savedMovies.splice(index, 1);
                     localStorage.setItem('savedMovies', JSON.stringify(savedMovies));
+                    //local storage updated to no longer include the deleted movie
                      //I used this source to see how best to splice the specific index from the saved array, source:https://sentry.io/answers/remove-specific-item-from-array/#:~:text=If%20you%20want%20to%20remove,to%20remove%20the%20first%20element.
             
               });
