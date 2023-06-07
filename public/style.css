@@ -65,7 +65,7 @@
     border-radius:2%;
     overflow: hidden;
     overscroll-behavior: none;
-  } /*"fixed" and overflow ensures that the dialog doesn't move with the page nor does the page itself move, and overscroll beahavior ensure that one cannot scroll within the actual modal */        
+  } /*"fixed" and overflow ensures that the dialog doesn't move with the page nor does the page itself move, and overscroll beahavior ensure that one cannot scroll within the actual modal, source:https://htmldom.dev/prevent-body-from-scrolling-when-opening-a-modal/ */        
   .dialog-overlay {
     position: fixed;
     top: 0;
@@ -86,7 +86,7 @@
     display: flex;
     flex-direction:column;
     justify-content: flex-start;
-  }/*making sure the form content is displaed vertically and to the left*/      
+  }/*making sure the form content is displayed vertically and to the left*/      
   form label{
     padding: bottom 0.15em;
   }
@@ -114,7 +114,7 @@
   .rating-container input{
     position: absolute;
     left: -100vw;
-  }/*this moves the radio buttons out of sight so that the stars can be visible*/   
+  }/*this moves the radio buttons out of sight so that the stars can be visible, as per this source that I used to create the star rating system, source:https://buttered-thorium-f6a.notion.site/How-To-Create-Interactive-Star-Ratings-171c5514b58744c2b531dcb96cedd89b*/   
   #addMovieButton{
     background-color:#C51924;
     color:#FFFBF2;
@@ -150,12 +150,12 @@
     height: 47.19px;
     background: url('stars.svg') no-repeat top left;
     cursor: pointer;
-  }/*this uses the stars.svg file to import a specific part of the image based on the given pixels*/  
+  }/*this uses the stars.svg file to import a specific part of the image based on the given pixels, as per source:https://buttered-thorium-f6a.notion.site/How-To-Create-Interactive-Star-Ratings-171c5514b58744c2b531dcb96cedd89b*/  
   .rating-container:not(:hover) input:indeterminate + label,
   .rating-container:not(:hover) input:checked ~ input + label,
   .rating-container input:hover ~ input + label{
     background-position: -70px 0;
-  }/*this deals with circumstances such as the user never having selected a radio button, a radio button being checked, and the user changing their mind*/  
+  }/*this deals with circumstances such as the user never having selected a radio button, a radio button being checked, and the user changing their mind, source:https://buttered-thorium-f6a.notion.site/How-To-Create-Interactive-Star-Ratings-171c5514b58744c2b531dcb96cedd89b*/  
   .poster-grid {
     position:relative;
     display: grid;
@@ -221,7 +221,7 @@
     justify-content:center;
     align-items: center;
     flex-direction: column;
-  }/*the fixed position puts the button at a permanent spot towards the button, and the z index makes sures its always overlayed on top of everything else*/  
+  }/*the fixed position puts the button at a permanent spot towards the button, and the z index makes sures its always overlayed on top of everything else, as per this source:https://www.youtube.com/watch?v=FK5DEa1Hvco&t=1s*/  
   .arrow{
   height:3em;
   }
